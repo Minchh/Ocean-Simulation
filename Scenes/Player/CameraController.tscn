@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccajm8v3kjvd7"]
+
+[ext_resource type="Script" uid="uid://cmdegvexv0pvp" path="res://Scripts/Player/CameraController.cs" id="1_qyebe"]
+
+[node name="CameraController" type="Node3D"]
+script = ExtResource("1_qyebe")
+
+[node name="Camera3D" type="Camera3D" parent="."]

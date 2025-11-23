@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnjggqoumqugr"]
+
+[ext_resource type="PackedScene" uid="uid://ccajm8v3kjvd7" path="res://Scenes/Player/CameraController.tscn" id="1_gigbt"]
+
+[node name="OceanWorld" type="Node3D"]
+
+[node name="CameraController" parent="." instance=ExtResource("1_gigbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52426267, 0)
