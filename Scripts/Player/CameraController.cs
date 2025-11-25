@@ -1,11 +1,11 @@
-// Inspired by Adam Viola: https://github.com/adamviola/simple-free-look-camera
+// Copyright © 2020 Adam Viola: https://github.com/adamviola/simple-free-look-camera
 
 using Godot;
 using System;
 
 public partial class CameraController : Node3D
 {
-    private const float SHIFT_MULTIPLIER = 1.5f;
+    private const float SHIFT_MULTIPLIER = 5.5f;
     private const float ALT_MULTIPLIER = 1.0f / SHIFT_MULTIPLIER;
     
     [Export(PropertyHint.Range, "0.0,1.0")]
@@ -23,8 +23,8 @@ public partial class CameraController : Node3D
     private float m_VelocityMultiplier = 4.0f;
     
     // Movement modifer keyboard state
-    private bool m_Shift = false;
-    private bool m_Alt = false;
+    private bool m_Shift;
+    private bool m_Alt;
 
     public override void _UnhandledInput(InputEvent @event)
     {

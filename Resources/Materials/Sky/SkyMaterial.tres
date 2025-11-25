@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dec6wsr2hwtw5"]
+
+[ext_resource type="Shader" uid="uid://p2tbbvgshuxb" path="res://Resources/Shaders/Sky/Sky.gdshader" id="1_ayshp"]
+[ext_resource type="Texture2D" uid="uid://dd2j1xh53vhro" path="res://Assets/Textures/sunflowers_puresky_4k.exr" id="2_xecpv"]
+
+[resource]
+shader = ExtResource("1_ayshp")
+shader_parameter/u_sky_color = Color(0.5809556, 0.8008157, 0.9295721, 1)
+shader_parameter/u_horizon_color = Color(0.38122818, 0.67876023, 0.84430397, 1)
+shader_parameter/u_sky_texture = ExtResource("2_xecpv")

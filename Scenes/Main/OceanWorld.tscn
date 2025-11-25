@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnjggqoumqugr"]
+
+[ext_resource type="PackedScene" uid="uid://ccajm8v3kjvd7" path="res://Scenes/Player/CameraController.tscn" id="1_gigbt"]
+[ext_resource type="Material" uid="uid://dec6wsr2hwtw5" path="res://Resources/Materials/Sky/SkyMaterial.tres" id="1_l5xql"]
+[ext_resource type="PackedScene" uid="uid://gj2ffw3nud30" path="res://Scenes/Water/SineWater.tscn" id="2_iyiqg"]
+
+[sub_resource type="Curve" id="Curve_l5xql"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_kx00l"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_850au"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_s4j4t"]
+curve_x = SubResource("Curve_l5xql")
+curve_y = SubResource("Curve_kx00l")
+curve_z = SubResource("Curve_850au")
+
+[sub_resource type="Sky" id="Sky_l5xql"]
+sky_material = ExtResource("1_l5xql")
+
+[sub_resource type="Environment" id="Environment_kx00l"]
+background_mode = 2
+sky = SubResource("Sky_l5xql")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 0.9
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.1
+adjustment_color_correction = SubResource("CurveXYZTexture_s4j4t")
+
+[node name="OceanWorld" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kx00l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301275, 0.24999999, 0.10061596, 0.33884794, 0.93544567, -0.48977184, 0.8352736, -0.24988294, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CameraController" parent="." instance=ExtResource("1_gigbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5242624, 3)
+
+[node name="SineWater" parent="." instance=ExtResource("2_iyiqg")]
+QuadResolution = 200
+WaterColor = Color(0.14664137, 0.25629622, 0.45977432, 1)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://gj2ffw3nud30"]
+
+[ext_resource type="Script" uid="uid://8r1khhtcqmuc" path="res://Scripts/Water/SineWater.cs" id="1_7eg1t"]
+
+[node name="SineWater" type="MeshInstance3D"]
+script = ExtResource("1_7eg1t")
+QuadResolution = 200
+MedianWavelength = 16.0
+MedianDirectionalDegree = 45.0
+DirectionalDegreeRange = 15.0
